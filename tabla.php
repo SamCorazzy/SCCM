@@ -20,7 +20,8 @@
     <!-- iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
-
+    <!-- script -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
     <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
@@ -65,7 +66,7 @@
 <br><br><br>
     <div class="px-5 pt-5 table-responsive">
 
-<table class="table table-striped" >
+<table class="table table-striped" id="tablajson"> <!--id de la tabla-->
   <thead class="text-center ">
     <tr>
       <th scope="col" class="align-middle">No. PROG</th>
@@ -106,6 +107,42 @@
   </tbody>
 </table>
       
+            <script type="text/javascript">
+
+				$(document).ready(function () {
+					var url = "generarJSON.php"; //creacion de una variable
+					$("#tablajson tbody").html("");//definiedo el formato de tabla en html usando un id de 
+					//tabla
+					$.getJSON(url, function (datosp) {//metodo de obtencion de un documento json
+						$.each(datosp, function (i, datosp) {//recorrer los elementos de un json
+							var newRow =
+								"<tr>"
+								+ "<td class="+"align-middle"+">" + datosp.no_prog + "</td>"
+								// imprimir los elementos del json en una celda de la tabla asignada
+								+ "<td class="+"align-middle"+">" + datosp.matricula + "</td>"
+								+ "<td class="+"align-middle"+">" + datosp.nombre_apellidos + "</td>"
+								+ "<td class="+"align-middle"+">" + datosp.fecha_nac + "</td>"
+								+ "<td class="+"align-middle"+">" + datosp.lugar_nac + "</td>"
+								+ "<td class="+"align-middle"+">" + datosp.curp + "</td>"
+								+ "<td class="+"align-middle"+">" + datosp.mexicanos_por + "</td>"
+                                + "<td class="+"align-middle"+">" + datosp.nombre_ape_padre + "</td>"
+								+ "<td class="+"align-middle"+">" + datosp.nombre_ape_madre + "</td>"
+								+ "<td class="+"align-middle"+">" + datosp.estado_civil + "</td>"
+								+ "<td class="+"align-middle"+">" + datosp.ocupacion + "</td>"
+                                + "<td class="+"align-middle"+">" + datosp.leer_escribir + "</td>"
+								+ "<td class="+"align-middle"+">" + datosp.grado_maximo_estudio + "</td>"
+								+ "<td class="+"align-middle"+">" + datosp.domicilio + "</td>"
+								+ "<td class="+"align-middle"+">" + datosp.fecha_exped + "</td>"
+								+ "</tr>";
+							$(newRow).appendTo("#tablajson tbody");//Insertar una nueva fila enla tabla segun 
+							//su id
+						});
+
+					});
+				});
+
+			</script>
+
     </div>
     <br><br><br><br><br><br> <br><br><br><br><br><br><br>
 </body>

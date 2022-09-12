@@ -20,7 +20,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script><!-- script para la version jquery usada -->
 
 
     <link href="styles/style.css" rel="stylesheet" type="text/css">
@@ -78,32 +78,32 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">MATRICULA</span>
-                    <input type="text" class="form-control" placeholder="MATRICULA" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="MATRICULA" aria-describedby="basic-addon1" id="matricula">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">NOMBRE (S) Y APELLIDOS PATERNO Y MATERNO</span>
-                    <input type="text" class="form-control" placeholder="NOMBRE (S) Y APELLIDOS PATERNO Y MATERNO" aria-label="Matricula" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="NOMBRE (S) Y APELLIDOS PATERNO Y MATERNO" aria-label="Matricula" aria-describedby="basic-addon1" id="nombre_apellidos">
                 </div>
 
                 <div class="input-group flex-nowrap mb-3">
                     <span class="input-group-text" id="addon-wrapping">FECHA DE NACIMIENTO</span>
-                    <input type="date" class="border px-2" aria-label="Matricula" aria-describedby="basic-addon1" placeholder="FECHA DE NACIMIENTO">
+                    <input type="date" class="border px-2" aria-label="Matricula" aria-describedby="basic-addon1" placeholder="FECHA DE NACIMIENTO" id="fecha_nac">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">LUGAR DE NACIMIENTO</span>
-                    <input type="text" class="form-control" placeholder="LUGAR DE NACIMIENTO" aria-label="Matricula" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="LUGAR DE NACIMIENTO" aria-label="Matricula" aria-describedby="basic-addon1" id="lugar_nac">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">CURP</span>
-                    <input type="text" class="form-control" placeholder="CURP" aria-label="Matricula" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="CURP" aria-label="Matricula" aria-describedby="basic-addon1" id="curp">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text " id="basic-addon1">MEXICANOS POR</span>
-                    <div class="btn-group px-4" role="group" aria-label="Basic radio toggle button group">
+                    <div class="btn-group px-4" role="group" aria-label="Basic radio toggle button group" id="mexicanos_por">
                         <!--Button 1-->
                         <input type="radio" class="btn-check mx-1" name="btnradio" id="btnradio1" autocomplete="off" checked>
                         <label class="btn btn-outline-dark " for="btnradio1">NACIONALIZADO</label>
@@ -115,42 +115,42 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">NOMBRE Y APELLIDOS DEL PADRE</span>
-                    <input type="text" class="form-control" placeholder="NOMBRE Y APELLIDOS DEL PADRE" aria-label="Matricula" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="NOMBRE Y APELLIDOS DEL PADRE" aria-label="Matricula" aria-describedby="basic-addon1" id="nombre_ape_padre">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">NOMBRE Y APELLIDOS DE LA MADRE</span>
-                    <input type="text" class="form-control" placeholder="NOMBRE Y APELLIDOS DE LA MADRE" aria-label="Matricula" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="NOMBRE Y APELLIDOS DE LA MADRE" aria-label="Matricula" aria-describedby="basic-addon1" id="nombre_ape_madre">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">ESTADO CIVIL</span>
-                    <input type="text" class="form-control" placeholder="ESTADO CIVIL" aria-label="Matricula" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="ESTADO CIVIL" aria-label="Matricula" aria-describedby="basic-addon1" id="estado_civil">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">OCUPACION</span>
-                    <input type="text" class="form-control" placeholder="OCUPACION" aria-label="Matricula" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="OCUPACION" aria-label="Matricula" aria-describedby="basic-addon1" id="ocupacion">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">SABE LEER Y ESCRIBIR</span>
-                    <input type="text" class="form-control" placeholder="SABE LEER Y ESCRIBIR" aria-label="Matricula" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="SABE LEER Y ESCRIBIR" aria-label="Matricula" aria-describedby="basic-addon1" id="leer_escribir">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">GRADO MAXIMO DE ESTUDIOS</span>
-                    <input type="text" class="form-control" placeholder="GRADO MAXIMO DE ESTUDIOS" aria-label="Matricula" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="GRADO MAXIMO DE ESTUDIOS" aria-label="Matricula" aria-describedby="basic-addon1" id="grado_maximo_estudio">
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">DOMICILIO</span>
-                    <input type="text" class="form-control" placeholder="DOMICILIO" aria-label="Matricula" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" placeholder="DOMICILIO" aria-label="Matricula" aria-describedby="basic-addon1" id="domicilio">
                 </div>
 
                 <div class="input-group flex-nowrap mb-3">
                     <span class="input-group-text" id="addon-wrapping">FECHA DE EXPEND.</span>
-                    <input type="date" class="border px-2" aria-label="Matricula" aria-describedby="basic-addon1" placeholder="FECHA DE EXPEND">
+                    <input type="date" class="border px-2" aria-label="Matricula" aria-describedby="basic-addon1" placeholder="FECHA DE EXPEND" id="fecha_exped">
                 </div>
 
             </div>
@@ -164,7 +164,7 @@
     <div class="card shadow mt-4 mx-5 px-3" id="contenedor">
         <br>
         <div class="btn-group mx-5">
-            <button type="button" class="btn  btn-primary mx-5"> <i class="bi bi-clipboard2-plus"></i> GUARDAR</button>
+            <button type="button" class="btn  btn-primary mx-5" id="guardar"> <i class="bi bi-clipboard2-plus"></i> GUARDAR</button>
 
             <button type="button" class="btn btn-info mx-5"> <i class="bi bi-journal-text"></i> IMPRIMIR</button>
 
@@ -175,6 +175,7 @@
     </div>
     <br>
 
+    <script src="app.js"></script>
 </body>
 
 <hr>
