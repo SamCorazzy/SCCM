@@ -10,10 +10,10 @@ foreach ($datos as $datos) {
      $ocupacion = $datos['ocupacion'];
      $leer_escribir = $datos['leer_escribir'];
      $grado_maximo_estudio = $datos['grado_maximo_estudio'];
+     $domicilio = $datos['domicilio'];
      $fecha_exped = $datos['fecha_exped'];
      $matricula = $datos['matricula'];
      
-     $no_prog = $datos['no_prog'];
      $nombre_apellidos = $datos['nombre_apellidos'];
      $fecha_nac = $datos['fecha_nac'];
      $lugar_nac = $datos['lugar_nac'];
@@ -22,13 +22,13 @@ foreach ($datos as $datos) {
 
      //posiblemente cambiar a update
 
-     $guardar = mysqli_query($con, "INSERT INTO registro_de_personas (no_prog, 
-                                                                      matricula, 
+     $guardar = mysqli_query($con, "INSERT INTO registro_de_personas (matricula, 
                                                                       nombre_apellidos, 
-                                                                      fecha_nac, lugar_nac, 
+                                                                      fecha_nac, 
+                                                                      lugar_nac, 
                                                                       curp, 
                                                                       mexicanos_por) 
-          VALUES ('$no_prog', '$matricula', '$nombre_apellidos', '$fecha_nac', '$lugar_nac', '$curp', '$mexicanos_por')");
+          VALUES ('$matricula', '$nombre_apellidos', '$fecha_nac', '$lugar_nac', '$curp', '$mexicanos_por')");
           //sentencia para insertar datos en la base de datos
      $guardar = mysqli_query($con, "INSERT INTO datos_personales (nombre_ape_padre, 
                                                                   nombre_ape_madre, 

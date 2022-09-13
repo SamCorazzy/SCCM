@@ -145,7 +145,7 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">DOMICILIO</span>
-                    <input type="text" class="form-control" placeholder="DOMICILIO" aria-label="Matricula" aria-describedby="basic-addon1" id="domicilio">
+                    <input type="text" class="form-control" placeholder="DOMICILIO" aria-label="Matricula" aria-describedby="basic-addon1" id="dom">
                 </div>
 
                 <div class="input-group flex-nowrap mb-3">

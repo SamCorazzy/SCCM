@@ -4,21 +4,9 @@ var data = [];//variable de tipo array
 
 guardar.addEventListener("click", agregar);//elemento que espera un clic en el elemento  y asi ejecutar la funcion a usar
 
-var cant=2;
 
-// function Num(cant){
-//     $(document).ready(function () {
-//         var url = "generarNum.php"; //creacion de una variable
-//         $.getJSON(url, function (num) {//metodo de obtencion de un documento json
-//             $.each(num, function (i, num) {
-//                 cant=num.no_prog+1;
-//             });
-//         });
-//     });
-// }
-// console.log(""+c);
+
 function agregar() {//funcion
-    // Num(cant);
     var matricula = document.querySelector('#matricula').value;
     var nombre_apellidos = document.querySelector('#nombre_apellidos').value;
     var fecha_nac = document.querySelector('#fecha_nac').value;
@@ -31,11 +19,12 @@ function agregar() {//funcion
     var ocupacion = document.querySelector('#ocupacion').value;
     var leer_escribir = document.querySelector('#leer_escribir').value;
     var grado_maximo_estudio = document.querySelector('#grado_maximo_estudio').value;
-    var domicilio = document.querySelector('#domicilio').value;
+    var domicilio = document.querySelector('#dom').value;
     var fecha_exped = document.querySelector('#fecha_exped').value;
+    console.log(domicilio);
     //agrega elementos al arreglo
     data.push(//guardado de datos en array
-        { "no_prog": cant,
+        { 
           "matricula": matricula,
           "nombre_apellidos": nombre_apellidos,
           "fecha_nac": fecha_nac,
@@ -58,7 +47,6 @@ function agregar() {//funcion
 
 function save() {
     var json = JSON.stringify(data);//variable para guardar los datos contenidos en el array data
-    console.log(json);
     $.ajax({
         type: "POST",//sentencia de tipo POST
         url: "api.php",//elemento en donde se ejecutara la sentencia
