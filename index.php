@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,8 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!--Bootstrap 5 JS-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- iconos -->
@@ -46,11 +42,11 @@
                             <li class="nav-item">
                                 <a class="nav-link active text-dark" aria-current="page" href="tabla.php">TABLA</a>
                             </li>
+                            <li class="nav-item ">
+                                <a class="nav-link text-dark" href="matriculas.php">MATRICULAS</a>
+                            </li>
                             <li class="nav-item  ">
                                 <a class="nav-link text-dark" href="reporte.php">REPORTES</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link text-dark" href="#">CUALQUIERA</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link disabled">SALIR</a>
@@ -70,46 +66,49 @@
     <br> 
     <h6 class="px-5 pt-5">Agrega los datos correspondientes</h6>
     </div>
-
+<form class="needs-validation" novalidate>
     <div class="card shadow mt-4 mx-5 px-3" id="contenedor">
         <div class="row">
 
             <div class=" col p-4">
 
                 <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">CURP</span>
+                    <input type="text" class="form-control" placeholder="CURP" aria-label="Curp" aria-describedby="basic-addon1" id="curp" required pattern="/^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/" minlength="18" maxlength="18"/>
+                </div>
+
+                <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">MATRICULA</span>
-                    <input type="text" class="form-control" placeholder="MATRICULA" aria-describedby="basic-addon1" id="matricula">
+                    <input type="text" class="form-control" placeholder="MATRICULA" aria-describedby="basic-addon1" id="matricula" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">CLASE</span>
+                    <input type="text" class="form-control" placeholder="CLASE" aria-label="Matricula" aria-describedby="basic-addon1" id="clase" required>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">NOMBRE (S) Y APELLIDOS PATERNO Y MATERNO</span>
-                    <input type="text" class="form-control" placeholder="NOMBRE (S) Y APELLIDOS PATERNO Y MATERNO" aria-label="Matricula" aria-describedby="basic-addon1" id="nombre_apellidos">
+                    <input type="text" class="form-control" placeholder="NOMBRE (S) Y APELLIDOS PATERNO Y MATERNO" aria-label="Matricula" aria-describedby="basic-addon1" id="nombre_apellidos" required>
                 </div>
 
                 <div class="input-group flex-nowrap mb-3">
                     <span class="input-group-text" id="addon-wrapping">FECHA DE NACIMIENTO</span>
-                    <input type="date" class="border px-2" aria-label="Matricula" aria-describedby="basic-addon1" placeholder="FECHA DE NACIMIENTO" id="fecha_nac">
+                    <input type="date" class="border px-2" aria-label="Matricula" aria-describedby="basic-addon1" placeholder="FECHA DE NACIMIENTO" id="fecha_nac" required>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">LUGAR DE NACIMIENTO</span>
-                    <input type="text" class="form-control" placeholder="LUGAR DE NACIMIENTO" aria-label="Matricula" aria-describedby="basic-addon1" id="lugar_nac">
-                </div>
-
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">CURP</span>
-                    <input type="text" class="form-control" placeholder="CURP" aria-label="Matricula" aria-describedby="basic-addon1" id="curp">
+                    <input type="text" class="form-control" placeholder="LUGAR DE NACIMIENTO" aria-label="Matricula" aria-describedby="basic-addon1" id="lugar_nac" required>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text " id="basic-addon1">MEXICANOS POR</span>
-                    <div class="btn-group px-4" role="group" aria-label="Basic radio toggle button group" id="mexicanos_por">
-                        <!--Button 1-->
-                        <input type="radio" class="btn-check mx-1" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                        <label class="btn btn-outline-dark " for="btnradio1">NACIONALIZADO</label>
-                        <!--Button 2-->
-                        <input type="radio" class="btn-check mx-1" name="btnradio" id="btnradio2" autocomplete="off">
-                        <label class="btn btn-outline-dark" for="btnradio2">NATURALIZADO</label>
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" required>
+                    <select name="select" id="mexicanos_por">
+                        <option value="soltero" selected>NACIONALIZADO</option>
+                        <option value="casado">NATURALIZADO</option>
+                    </select>
                     </div>
                 </div>
 
@@ -125,32 +124,42 @@
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">ESTADO CIVIL</span>
-                    <input type="text" class="form-control" placeholder="ESTADO CIVIL" aria-label="Matricula" aria-describedby="basic-addon1" id="estado_civil">
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" required>
+                        <select name="select" id="estado_civil">
+                            <option value="soltero" selected>Soltero</option>
+                            <option value="casado">Casado</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">OCUPACION</span>
-                    <input type="text" class="form-control" placeholder="OCUPACION" aria-label="Matricula" aria-describedby="basic-addon1" id="ocupacion">
+                    <input type="text" class="form-control" placeholder="OCUPACION" aria-label="Matricula" aria-describedby="basic-addon1" id="ocupacion" required>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">SABE LEER Y ESCRIBIR</span>
-                    <input type="text" class="form-control" placeholder="SABE LEER Y ESCRIBIR" aria-label="Matricula" aria-describedby="basic-addon1" id="leer_escribir">
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" required>
+                        <select name="select2" id="leer_escribir">
+                            <option value="si" selected>Si</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">GRADO MAXIMO DE ESTUDIOS</span>
-                    <input type="text" class="form-control" placeholder="GRADO MAXIMO DE ESTUDIOS" aria-label="Matricula" aria-describedby="basic-addon1" id="grado_maximo_estudio">
+                    <input type="text" class="form-control" placeholder="GRADO MAXIMO DE ESTUDIOS" aria-label="Matricula" aria-describedby="basic-addon1" id="grado_maximo_estudio" required/>
                 </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">DOMICILIO</span>
-                    <input type="text" class="form-control" placeholder="DOMICILIO" aria-label="Matricula" aria-describedby="basic-addon1" id="dom">
+                    <input type="text" class="form-control" placeholder="DOMICILIO" aria-label="Matricula" aria-describedby="basic-addon1" id="dom" required/>
                 </div>
 
                 <div class="input-group flex-nowrap mb-3">
                     <span class="input-group-text" id="addon-wrapping">FECHA DE EXPEND.</span>
-                    <input type="date" class="border px-2" aria-label="Matricula" aria-describedby="basic-addon1" placeholder="FECHA DE EXPEND" id="fecha_exped">
+                    <input type="date" class="border px-2" aria-label="Matricula" aria-describedby="basic-addon1" placeholder="FECHA DE EXPEND" id="fecha_exped" required/>
                 </div>
 
             </div>
@@ -159,9 +168,6 @@
         </div>
 
 
-    </div>
-
-    <div class="card shadow mt-4 mx-5 px-3" id="contenedor">
         <br>
         <div class="btn-group mx-5">
             <button type="button" class="btn  btn-primary mx-5" id="guardar"> <i class="bi bi-clipboard2-plus"></i> GUARDAR</button>
@@ -173,8 +179,8 @@
         <br>
     </div>
     </div>
-    <br>
-
+    <br><br><br>
+</form>
     <script src="app.js"></script>
 </body>
 

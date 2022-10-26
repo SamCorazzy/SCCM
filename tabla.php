@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -64,12 +60,11 @@
    
     <!-- TERMINA EL MENU NAV BAR -->
 <br><br><br>
-    <div class="px-5 pt-5 table-responsive">
+    <div class="pt-5 table-responsive container">
 
 <table class="table table-striped" id="tablajson"> <!--id de la tabla-->
   <thead class="text-center ">
     <tr>
-      <th scope="col" class="align-middle">No. PROG</th>
       <th scope="col" class="align-middle">MATRICULA</th>
       <th scope="col" class="align-middle">NOMBRE(S) Y APELLIDOS PATERNO Y MATERNO</th>
       <th scope="col" class="align-middle">FECHA DE NACIMIENTO</th>
@@ -108,16 +103,14 @@
 </table>
       
             <script type="text/javascript">
-
-				$(document).ready(function () {
-					var url = "generarJSON.php"; //creacion de una variable
+                $(document).ready(function () {
+					var url = "generarJSONTabla.php"; //creacion de una variable
 					$("#tablajson tbody").html("");//definiedo el formato de tabla en html usando un id de 
 					//tabla
 					$.getJSON(url, function (datosp) {//metodo de obtencion de un documento json
 						$.each(datosp, function (i, datosp) {//recorrer los elementos de un json
 							var newRow =
 								"<tr>"
-								+ "<td class="+"align-middle"+">" + datosp.no_prog + "</td>"
 								// imprimir los elementos del json en una celda de la tabla asignada
 								+ "<td class="+"align-middle"+">" + datosp.matricula + "</td>"
 								+ "<td class="+"align-middle"+">" + datosp.nombre_apellidos + "</td>"
