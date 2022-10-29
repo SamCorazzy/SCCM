@@ -5,7 +5,6 @@ var data = [];//variable de tipo array
 guardar.addEventListener("click", agregar);//elemento que espera un clic en el elemento  y asi ejecutar la funcion a usar
 
 
-
 function agregar() {//funcion
     var matricula = document.querySelector('#matricula').value;
     var nombre_apellidos = document.querySelector('#nombre_apellidos').value;
@@ -20,7 +19,7 @@ function agregar() {//funcion
     var leer_escribir = document.querySelector('#leer_escribir').value;
     var grado_maximo_estudio = document.querySelector('#grado_maximo_estudio').value;
     // var grado_estudios = document.querySelector('#grado_estudios').value;
-    var domicilio = document.querySelector('#dom').value;
+    var domicilio = document.querySelector('#domicilio').value;
     var fecha_exped = document.querySelector('#fecha_exped').value;
     var clase = document.querySelector('#clase').value;
     //console.log(domicilio);
@@ -45,9 +44,49 @@ function agregar() {//funcion
           "clase": clase,
         }
     );
-    
-    save();
+
+    if(matricula == '' || nombre_apellidos == '' || fecha_nac == '' || lugar_nac == '' || curp == '' || mexicanos_por == '' || nombre_ape_padre == '' || nombre_ape_madre == '' || estado_civil == '' || ocupacion == '' || leer_escribir == '' || grado_maximo_estudio == '' || domicilio == '' || fecha_exped == '' || clase == ''){
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'NEL!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+    } else {
+        alerta();
+    }
+
+
 }
+
+
+
+
+function alerta(){
+    var mensaje;
+    var opcion = confirm("¿DESEA GUARDAR?");
+    if (opcion == true) {
+        save();
+        mensaje = Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'OK?',
+            showConfirmButton: false,
+            timer: 1500
+          })
+	} else {
+        mensaje = Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'NEL!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+	}
+}
+
+
 
  function save() {
      var json = JSON.stringify(data);//variable para guardar los datos contenidos en el array data

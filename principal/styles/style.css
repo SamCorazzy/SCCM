@@ -1,0 +1,150 @@
+html{
+    min-height: 100%;
+    position: relative;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+header{
+    background: rgb(0, 0, 0);
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+nav{
+    float: right;
+}
+
+.imgHead{
+    float: left;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.logo{
+    float: left;
+    margin-top: 25px;
+    padding-left: 10px;
+    list-style: none;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul{
+    list-style: none;
+    overflow: hidden;
+}
+  
+nav ul li{
+    float: left;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+}
+nav ul li a{
+    display: block;
+    padding: 10px;
+    padding-right: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+  nav ul li:hover{
+    background: #5a5f5e;
+}
+
+.contenido{
+    padding-top: 100px;
+    margin-left: 35px;
+    margin-right: 35px;
+    padding-bottom: 60px;
+}
+
+.formu{
+    border-radius: 5px;
+    background-color: #F3F3F3;
+    padding-left: 25px;
+    padding-top: 15px;
+}
+
+footer{
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:60px;
+   width:100%;
+   background: black;
+}
+.pie{
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+label{
+    width: 350px;
+    height: 50px;
+	font-weight:bold;
+	display:inline-block;
+}
+
+input[type=text]{
+    width:50%;
+    height: 35px;
+	padding:3px 10px;
+	border:1px solid #646464;
+	border-radius:3px;
+	background-color:#ffffff;
+	margin:8px 0;
+	display:inline-block;
+}
+
+input:invalid {
+    box-shadow: 0 0 5px 1px red;
+  }
+  
+  input:focus:invalid {
+    box-shadow: none;
+  }
+
+select{
+    width: 160px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(2, 2, 2);
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=date]{
+    width: 160px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input[type=submit] {
+    width: 25%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
