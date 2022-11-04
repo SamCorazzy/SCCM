@@ -71,8 +71,8 @@
       <th scope="col" class="align-middle">LUGAR DE NACIMIENTO</th>
       <th scope="col" class="align-middle">CURP</th>
       <th scope="col" class="align-middle">MEXICANOS POR:</th>
-      <th scope="col" class="align-middle">NOMBRE Y APELLIEDOS DEL PADRE</th>
-      <th scope="col" class="align-middle">NOMBRE Y APELLIEDOS DE LA MADRE</th>
+      <th scope="col" class="align-middle">NOMBRE Y APELLIDOS DEL PADRE</th>
+      <th scope="col" class="align-middle">NOMBRE Y APELLIDOS DE LA MADRE</th>
       <th scope="col" class="align-middle">ESTADO CIVIL</th>
       <th scope="col" class="align-middle">OCUPACION</th>
       <th scope="col" class="align-middle">SABE LEER Y ESCRIBIR</th>
@@ -104,7 +104,7 @@
       
             <script type="text/javascript">
                 $(document).ready(function () {
-					var url = "generarJSONTabla.php"; //creacion de una variable
+					var url = "generarTabla.php"; //creacion de una variable
 					$("#tablajson tbody").html("");//definiedo el formato de tabla en html usando un id de 
 					//tabla
 					$.getJSON(url, function (datosp) {//metodo de obtencion de un documento json
