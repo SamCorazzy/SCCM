@@ -16,15 +16,15 @@ foreach ($datos as $datos) {
      $ocupacion = $datos['ocupacion'];
      $leer_escribir = $datos['leer_escribir'];
      $grado_maximo_estudio = $datos['grado_maximo_estudio'];
-     // $grado_estudios = $datos['grado_estudios'];
+     $grado_estudios = $datos['grado_estudios'];
      $domicilio = $datos['domicilio'];
      $fecha_exped = $datos['fecha_exped'];
      $clase = $datos['clase'];
 
      //posiblemente cambiar a update
 
-     $guardar = mysqli_query($con, "INSERT INTO matricula (matricula, curp) 
-          VALUES ('$matricula', '$curp')");
+     $guardar = mysqli_query($con, "INSERT INTO matricula (matricula, curp, expedidas) 
+          VALUES ('$matricula', '$curp', '1')");
           //sentencia para insertar datos en la base de datos
      $guardar = mysqli_query($con, "INSERT INTO datos_personales (
      nombre_ape, 
@@ -38,10 +38,10 @@ foreach ($datos as $datos) {
      ocupacion, 
      leer_escrib, 
      grado_max_estudio, 
-     -- grado_estudios, 
+     grado_estudios, 
      domicilio, 
      fecha_exped, 
      clase) 
      VALUES ('$nombre_apellidos', '$fecha_nac', '$lugar_nac', '$curp', '$mexicanos_por', '$nombre_ape_padre', '$nombre_ape_madre', '$estado_civil', '$ocupacion', '$leer_escribir', 
-     '$grado_maximo_estudio', '$domicilio', '$fecha_exped', '$clase')");
+     '$grado_maximo_estudio', '$grado_estudios', '$domicilio', '$fecha_exped', '$clase')");
 }

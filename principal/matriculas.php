@@ -37,7 +37,7 @@
             <nav>
                 <ul>
                     <li><a href="formulario.php">FORMULARIO</a></li>
-                    <li><a href="tabla_pruebas.php">TABLA</a></li>
+                    <li><a href="tabla_prueba.php">TABLA</a></li>
                     <li><a href="reporte.php">REPORTES</a></l>
                     <li><a href="../index.php">SALIR</a></li>
                 </ul>
@@ -48,14 +48,32 @@
     <div class="contenido">
         <div>
             <main>
-                <h3>POR FAVOR INGRESA LAS MATRICULAS</h3>
-                <form class="formu">
+                <h3>ACCIONES DE MATRICULAS</h3>
+                <form class="formu" action="recibe_excel_validando.php" method="POST" enctype="multipart/form-data">
                     <div>
-                        <label for="matricula" class="field">MATRICULA</label>
-                        <input type="text" name="matricula" required placeholder="MATRICULA" id="matricula">
+                        <h3>SELECCIONE UN ARCHIVO EXCEL PARA REGISTRAR LAS MATRICULAS</h3>
+                        <label for="matriculas">MATRICULAS</label>
+                        <input type="file" name="matriculas" id="matriculas" />
+                        <label for="guardar"><span>Elegir Archivo Excel</span></label>
                     </div>
                     <div>
-                        <center><input type="submit" name="guardar" id="guardar" value="GUARDAR"></center>
+                        <center><input type="submit" name="guardar" id="guardar" value="GUARDAR" /></center>
+                    </div>
+                    <div>
+                        <h3>INGRESE MATRICULA EXTRAVIADA</h3>
+                        <label for="matriculaExt" class="field">MATRICULA</label>
+                        <input type="text" name="matriculaExt" placeholder="MATRICULA" id="matriculaExt">
+                    </div>
+                    <div>
+                        <center><input type="button" name="guardarMaExtr" id="guardarMaExtr" value="GUARDAR"></center>
+                    </div>
+                    <div>
+                        <h3>INGRESE MATRICULA A INUTILIZAR</h3>
+                        <label for="matriculaInt" class="field">MATRICULA</label>
+                        <input type="text" name="matriculaInt" placeholder="MATRICULA" id="matriculaInt">
+                    </div>
+                    <div>
+                        <center><input type="button" name="guardarMaInut" id="guardarMaInut" value="GUARDAR"></center>
                     </div>
                 </form>
             </main>
@@ -63,7 +81,7 @@
 
     </div>
     <br><br><br><br>
-    <script src="app.js"></script>
+    <script src="gMatriculas.js"></script>
 </body>
 <footer>
     <p class="pie">Municipio de San Juan Bautista Tuxtepec, Oax.</p>

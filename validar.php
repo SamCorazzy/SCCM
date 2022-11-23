@@ -11,7 +11,7 @@ $resultado= mysqli_query($conexion, $consulta);
 $filas=mysqli_num_rows($resultado);
 
 if($filas){
-    header("location:principal/index.php");
+    header("location:principal/formulario.php");
     }else{
         include ("index.php");
         ?>

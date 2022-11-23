@@ -114,7 +114,7 @@ input:focus:invalid {
 }
 
 select {
-  width: 160px;
+  width: 180px;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -122,10 +122,27 @@ select {
   background-color: rgb(255, 255, 255);
   border-radius: 4px;
   box-sizing: border-box;
+  text-align: center;
+}
+
+option{
+  text-align: left;
+}
+
+.select_grado{
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(2, 2, 2);
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 input[type="date"] {
-  width: 160px;
+  width: 180px;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -133,6 +150,7 @@ input[type="date"] {
   border-radius: 4px;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  text-align: center;
 }
 
 input[type="submit"] {
@@ -149,6 +167,33 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #45a049;
 }
+
+input[type="file"] {
+  width: 25%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="file"]:hover {
+  background-color: #45a049;
+}
+input[type="button"] {
+  width: 25%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="button"]:hover {
+  background-color: #45a049;
+}
 /* acaba formulario */
 
 /*Tabla*/
@@ -156,6 +201,8 @@ input[type="submit"]:hover {
   padding-top: 100px;
   margin-right: 35px;
   margin-left: 35px;
+  padding-bottom: 100px;
+  overflow-y: auto;
 }
 
 table{
@@ -168,15 +215,30 @@ table{
   overflow: hidden;
   overflow-x: auto;
   overflow-y: auto;
-  padding-bottom: 35px;
+  padding-bottom: 30px;
 }
 
 .content-table {
-  margin: 0px 25px;
+  margin: 0px 15px;
   font-size: 1em;
   font-family: sans-serif;
   min-width: 450px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.buscar{
+  width: 350px;
+  height: 50px;
+  font-weight: bold;
+}
+.buscar_input{
+  width: 50%;
+  height: 35px;
+  padding: 3px 10px;
+  border: 1px solid #646464;
+  border-radius: 3px;
+  background-color: #ffffff;
+  margin: 8px 0;
 }
 
 .content-table thead tr {
@@ -206,5 +268,4 @@ td, th{
 /* acaba celda */
 
 /*acaba tabla*/
-
 

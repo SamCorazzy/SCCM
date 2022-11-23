@@ -1,14 +1,5 @@
 <?php //inicio de un documento php
-
-$server = "localhost";// variable en jQuery ($() es un resumen o forma corta de invocar la función jQuery.)
-$user = "root";
-$pass = "";
-$bd = "sccm";
-
-//Creamos la conexión
-$conexion = mysqli_connect($server, $user, $pass,$bd) //variable para la coneccion con la base de datos
-or die("Ha sucedido un error inexperado en la conexion de la base de datos");
-
+require 'conexion.php';
 //generamos la consulta
 $sql = "SELECT t1.matricula, 
 			   t2.nombre_ape,
@@ -27,9 +18,9 @@ $sql = "SELECT t1.matricula,
 		FROM 
 			   datos_personales t2 LEFT JOIN matricula t1 
 			   ON t2.curp = t1.curp;";//consulta JOIN de sql
-mysqli_set_charset($conexion, "utf8"); //el tipo de formato de datos que se usa es utf8
+mysqli_set_charset($con, "utf8"); //el tipo de formato de datos que se usa es utf8
 
-if(!$result = mysqli_query($conexion, $sql)) die();//si los datos entre la coneccion y 
+if(!$result = mysqli_query($con, $sql)) die();//si los datos entre la coneccion y 
 												   //la consulta son correctos habra un resultado el cual se guardara en result
 
 $datosp = array(); //creamos un array
@@ -71,7 +62,7 @@ while($row = mysqli_fetch_array($result)) //relleno del array
 }
 	
 //desconectamos la base de datos
-$close = mysqli_close($conexion) 
+$close = mysqli_close($con) 
 or die("Ha sucedido un error inexperado en la desconexion de la base de datos");
   
 

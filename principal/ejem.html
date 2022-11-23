@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <form id="form1">
+        <select id="select1" onclick="cambiaForm2(this.value)">
+            <option value="0" selected> </option>
+            <option value="a">A</option>
+            <option value="b">B</option>
+        </select>
+    </form>
+
+    <form id="form2">
+        <select id="select2"></select>
+    </form>
+
+    <script>
+        function cambiaForm2(seleccion) {
+            var sel1 = ["A1", "A2", "A3"];
+            var sel2 = ["B1", "B2", "B3"];
+
+            var select2 = document.getElementById("select2");
+
+            select2.innerHTML = "";
+
+            switch (seleccion) {
+                case "A":
+                    for (i in sel1) {
+                        var opcion = document.createElement("option");
+                        opcion.value = sel1[i];
+                        var texto = document.createTextNode(sel1[i]);
+                        opcion.appendChild(texto);
+                        select2.appendChild(opcion);
+                    }
+
+                    break;
+
+                case "B":
+                    for (i in sel2) {
+                        var opcion = document.createElement("option");
+                        opcion.value = sel2[i];
+                        var texto = document.createTextNode(sel2[i]);
+                        opcion.appendChild(texto);
+                        select2.appendChild(opcion);
+                    }
+
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
