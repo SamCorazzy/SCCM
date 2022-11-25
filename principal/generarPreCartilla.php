@@ -1,12 +1,24 @@
 <?php //inicio de un documento php
 require 'conexion.php';
 //generamos la consulta
-$sql = "SELECT t1.matricula,
-t2.grado_estudios, 
-t2.domicilio 
-               FROM 
-               datos_personales t2 RIGHT JOIN matricula t1
-               ON t2.curp = t1.curp;";//consulta JOIN de sql
+
+$buscar = $_POST['json'];
+
+$sql = "SELECT t2.nombre_ape,
+			   t2.fecha_nac, 
+			   t2.lugar_nac,
+			   t2.nombre_ape_padre,
+			   t2.nombre_ape_madre,
+			   t2.estado_civil,
+			   t2.ocupacion,
+			   t2.leer_escrib,
+			   t2.curp,
+			   t2.grado_max_estudio,
+			   t2.domicilio,
+			   t2.clase
+		FROM 
+			   datos_personales t2 LEFT JOIN matricula t1 
+			   ON t2.curp = t1.curp WHERE t1.matricula LIKE '".$buscar."%';";//consulta JOIN de sql
 mysqli_set_charset($con, "utf8"); //el tipo de formato de datos que se usa es utf8
 
 if(!$result = mysqli_query($con, $sql)) die();//si los datos entre la coneccion y 
@@ -16,16 +28,32 @@ $datosp = array(); //creamos un array
 
 while($row = mysqli_fetch_array($result)) //relleno del array
 { //relleno del array segun los datos que se desean obtener de la consulta
-	$matricula=$row['matricula'];
 	$nombre_ape=$row['nombre_ape'];
+	$fecha_nac=$row['fecha_nac'];
+	$lugar_nac=$row['lugar_nac'];
+	$nombre_ape_padre=$row['nombre_ape_padre'];
+	$nombre_ape_madre=$row['nombre_ape_madre'];
+	$estado_civil=$row['estado_civil'];
+	$ocupacion=$row['ocupacion'];
+	$leer_escrib=$row['leer_escrib'];
+	$curp=$row['curp'];
 	$grado_max_estudio=$row['grado_max_estudio'];
 	$domicilio=$row['domicilio'];
+	$clase=$row['clase'];
 	
 
-	$datosp[] = array('matricula'=> $matricula, 
-						'nombre_apellidos'=> $nombre_ape, 
+	$datosp[] = array('nombre_apellidos'=> $nombre_ape, 
+						'fecha_nac'=> $fecha_nac, 
+						'lugar_nac'=> $lugar_nac,
+						'nombre_ape_padre'=> $nombre_ape_padre,
+						'nombre_ape_madre'=> $nombre_ape_madre,
+						'estado_civil'=> $estado_civil,
+						'ocupacion'=> $ocupacion,
+						'leer_escribir'=> $leer_escrib,
+						'curp'=> $curp,
 						'grado_maximo_estudio'=> $grado_max_estudio,
 						'domicilio'=> $domicilio,
+						'clase'=> $clase,
 					);
 
 }

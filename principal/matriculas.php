@@ -49,15 +49,22 @@
         <div>
             <main>
                 <h3>ACCIONES DE MATRICULAS</h3>
-                <form class="formu" action="recibe_excel_validando.php" method="POST" enctype="multipart/form-data">
+                <form class="formu" action="precartilla.php" method="POST">
+                <div>
+                        <h3>INGRESE LA MATRICULA A IMPRIMIR</h3>
+                        <?php
+                        $matricula="";
+                        echo '<input type="hidden" value="' . htmlspecialchars($matricula) . '" />'."\n";
+                        echo '<label for="matricula" class="field">MATRICULA</label>
+                        <input type="text" name="matricula" placeholder="MATRICULA" id="matricula" value="'.htmlspecialchars($matricula).'">'
+                    ?>
+                </div>
                     <div>
-                        <h3>SELECCIONE UN ARCHIVO EXCEL PARA REGISTRAR LAS MATRICULAS</h3>
-                        <label for="matriculas">MATRICULAS</label>
-                        <input type="file" name="matriculas" id="matriculas" />
-                        <label for="guardar"><span>Elegir Archivo Excel</span></label>
-                    </div>
-                    <div>
-                        <center><input type="submit" name="guardar" id="guardar" value="GUARDAR" /></center>
+                        <center>
+                            <!-- <input type="button" name="prematricula" id="prematricula" value="PRPARAR PARA IMPRIMIR" style="padding-right: 20px;"> -->
+                            <!-- <input type="submit" name="imprimirMatricula" id="imprimirMatricula" value="IMPRIMIR"> -->
+                            <a href="precartilla.php?matricula=<?php echo htmlspecialchars($matricula);?>">Ir a respuesta.php</a>
+                        </center>
                     </div>
                     <div>
                         <h3>INGRESE MATRICULA EXTRAVIADA</h3>

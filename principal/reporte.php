@@ -50,8 +50,8 @@
     </div>
 
     <div class="contenido">
-        <div class="caja">
-            <select id="año">
+        <div class="caja" style="text-align: right;">
+            <select id="año" onchange="mostrarResultados(); matriculas(); gradoMax()">
                 <?php
                 for ($i = 2022; $i < 2026; $i++) {
                     if ($i == 2022) {
@@ -62,7 +62,7 @@
                 }
                 ?>
             </select>
-            <select id="mes" onclick="mostrarResultados()">
+            <select id="mes" onchange="mostrarResultados();">
                 <option value="1">Enero</option>
                 <option value="2">Febrero</option>
                 <option value="3">Marzo</option>
@@ -77,17 +77,41 @@
                 <option value="12">Diciembre</option>
             </select>
         </div>
-        <div class="resultados"><canvas id="grafico"></canvas></div>
+        <div>
+            <h2>REPORTE GENERAL</h2>
+            <center><a type="button" href="reportepdf.php">Reporte 1</a></center>
+            <br><br>
+            <h2>REPORTE MATRICULAS REGISTRADAS POR MES DE CADA AÑO</h2>
+            <center>
+                <div class="resultados2" style="height: 300px; width: 700px;">
+                    <canvas id="grafico2"></canvas>
+                </div><br>
+                <a type="button" href="tabla2pdf.php">Reporte 2</a>
+            </center>
+            <h2>MATRICULAS REGISTRADAS</h2>
+            <center>
+                <div class="resultados" style="height: 300px; width: 400px;">
+                    <canvas id="grafico"></canvas>
+                </div><br>
+                <a type="button" href="tabla3pdf.php">Reporte 3</a>
+            </center>
+            <h2>REPORTE DE GRADO DE ESTUDIOS REGISTRADOS POR AÑO</h2>
+            <center>
+                <div class="resultados3" style="height: 300px; width: 700px;">
+                    <canvas id="grafico3"></canvas>
+                </div><br>
+                <a type="button" href="tabla4pdf.php">Reporte 4</a>
+            </center>
+        </div>
+        <br><br>
     </div>
-    <br><br><br>
-    <a type="button" href="reportepdf.php">Reporte 1</a>
-    <a type="button" href="tabla2pdf.php">Reporte 2</a>
-    <a type="button" href="tabla3pdf.php">Reporte 3</a>
-    <a type="button" href="tabla4pdf.php">Reporte 4</a>
+
 
     <script type="text/javascript">
         $(document).ready(function() {
             mostrarResultados();
+            matriculas();
+            gradoMax();
         });
     </script>
     <script src="rReporte.js"></script>

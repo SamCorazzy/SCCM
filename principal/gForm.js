@@ -137,6 +137,9 @@ function save() {
                 showConfirmButton: false,
                 timer: 1500
             })
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            alert('Error!!:  ');
         }
 
     });
@@ -153,9 +156,9 @@ function buscarMatricula() {
             url: "revisarMatricula.php", //elemento en donde se ejecutara la sentencia
             data: "json=" + bMa, //datos que se usaran en la sentencia
             dataType: "json",
-            success: function(resultado){
+            success: function (resultado) {
                 console.log(resultado);
-                if(resultado == "S"){
+                if (resultado == "S") {
                     mensaje = Swal.fire({
                         position: 'center',
                         icon: 'error',
@@ -163,7 +166,7 @@ function buscarMatricula() {
                         showConfirmButton: false,
                         timer: 1500
                     })
-                }else if(resultado == "N"){
+                } else if (resultado == "N") {
                     mensaje = Swal.fire({
                         position: 'center',
                         icon: 'success',
@@ -172,20 +175,12 @@ function buscarMatricula() {
                         timer: 1500
                     })
                 }
-                
-            },error: function( jqXHR, textStatus, errorThrown ) {
-                alert( 'Error!!:  ');
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('Error!!:  ');
             }
-            
-        })
-    }
-    else{
-        mensaje = Swal.fire({
-            position: 'center',
-            icon: 'error',
-            title: 'INGRESE UNA MATRICULA',
-            showConfirmButton: false,
-            timer: 3500
+
         })
     }
 }
@@ -200,9 +195,9 @@ function buscarCurp() {
             url: "revisarCurp.php", //elemento en donde se ejecutara la sentencia
             data: "json=" + bMa, //datos que se usaran en la sentencia
             dataType: "json",
-            success: function(resultado){
+            success: function (resultado) {
                 console.log(resultado);
-                if(resultado == "N"){
+                if (resultado == "S") {
                     mensaje = Swal.fire({
                         position: 'center',
                         icon: 'error',
@@ -210,7 +205,7 @@ function buscarCurp() {
                         showConfirmButton: false,
                         timer: 1500
                     })
-                }else if(resultado == "S"){
+                } else if (resultado == "N") {
                     mensaje = Swal.fire({
                         position: 'center',
                         icon: 'success',
@@ -219,20 +214,13 @@ function buscarCurp() {
                         timer: 1500
                     })
                 }
-                
-            },error: function( jqXHR, textStatus, errorThrown ) {
-                alert( 'Error!!:  ');
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert('Error!!:  ');
             }
-            
-        })
-    }
-    else{
-        mensaje = Swal.fire({
-            position: 'center',
-            icon: 'error',
-            title: 'INGRESE UNA CURP',
-            showConfirmButton: false,
-            timer: 3500
+
         })
     }
 }
+

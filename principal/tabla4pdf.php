@@ -1,14 +1,19 @@
 <?php
 
 ob_start();
+require 'conexion.php';
 
 $Año = date('Y'); //Obtener Año actual
-$meses = array("ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE");//Obtener Mes
-$mes = $meses[date('n')-1];//Variable para guardar el mes de la fecha actual
-$dia = date('j');//Variable para obtener el dia del mes de la fecha actual
-
-
-
+$meses = array("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"); //Obtener Mes
+$mes = $meses[date('n') - 1]; //Variable para guardar el mes de la fecha actual
+$dia = date('j'); //Variable para obtener el dia del mes de la fecha actual
+$sumasinestudios = 0;
+$sumaspreescolar = 0;
+$sumasprimaria = 0;
+$sumassecundaria = 0;
+$sumasbachillerato = 0;
+$sumaslicanciatura = 0;
+$subtotalTotal = 0;
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +56,7 @@ $dia = date('j');//Variable para obtener el dia del mes de la fecha actual
             <h4 style="text-align: center;">JUNTA MUNICIPAL DE RECLUTAMIENTO DE SAN JUAN BAUTISTA TUXTEPEC, OAXACA
             </h4><br>
             <p>
-                INFORME DE EFECTIVOS ALISTADOS EN LA JUNTA MUNICIPAL DE RECLUTAMIENTO DE SAN JUAN BAUTISTA TUXTEPEC, OAX. CORRESPONDIENTE AL AÑO <?php echo $Año?>
+                INFORME DE EFECTIVOS ALISTADOS EN LA JUNTA MUNICIPAL DE RECLUTAMIENTO DE SAN JUAN BAUTISTA TUXTEPEC, OAX. CORRESPONDIENTE AL AÑO <?php echo $Año ?>
             </p><br>
         </div><br>
 
@@ -61,6 +66,7 @@ $dia = date('j');//Variable para obtener el dia del mes de la fecha actual
                     <tr>
                         <th>CLASE</th>
                         <th>ANALFANBETAS</th>
+                        <th>PREESCOLAR</th>
                         <th>PRIMARIA</th>
                         <th>SECUNDARIA</th>
                         <th>BACHILLERATO</th>
@@ -69,49 +75,90 @@ $dia = date('j');//Variable para obtener el dia del mes de la fecha actual
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <?php
+                    include('generarTabla4Anticipados.php');
+                    foreach ($datosA as $A) {
+                    ?>
                         <tr>
                             <th>ANTICIPADOS</th>
-                            <th>g</th>
-                            <th>g</th>
-                            <th>g</th>
-                            <th>g</th>
-                            <th>g</th>
-                            <th>g</th>
+                            <th><?php $sumasinestudios = $A['sinestudios'];
+                                echo $A['sinestudios']; ?></th>
+                            <th><?php $sumaspreescolar = $A['preescolar'];
+                                echo $A['preescolar']; ?></th>
+                            <th><?php $sumasprimaria = $A['primaria'];
+                                echo $A['primaria']; ?></th>
+                            <th><?php $sumassecundaria = $A['secundaria'];
+                                echo $A['secundaria']; ?></th>
+                            <th><?php $sumasbachillerato = $A['bachillerato'];
+                                echo $A['bachillerato']; ?></th>
+                            <th><?php $sumaslicanciatura = $A['licenciatura'];
+                                echo $A['licenciatura']; ?></th>
+                            <th><?php $subtotalTotal = $A['subtotal'];
+                                echo $A['subtotal']; ?></th>
 
+                        <?php } ?>
                         </tr>
 
                         <tr>
                             <th>CLASE</th>
-                            <th>a</th>
-                            <th>a</th>
-                            <th>a</th>
-                            <th>a</th>
-                            <th>a</th>
-                            <th>a</th>
+                            <?php
+                            include('generarTabla4Clase.php');
+                            foreach ($datosC as $C) {
+                            ?>
+                                <th><?php $sumasinestudios += $C['sinestudios2'];
+                                    echo $C['sinestudios2']; ?></th>
+                                <th><?php $sumaspreescolar += $C['preescolar2'];
+                                    echo $C['preescolar2']; ?></th>
+                                <th><?php $sumasprimaria += $C['primaria2'];
+                                    echo $C['primaria2']; ?></th>
+                                <th><?php $sumassecundaria += $C['secundaria2'];
+                                    echo $C['secundaria2']; ?></th>
+                                <th><?php $sumasbachillerato += $C['bachillerato2'];
+                                    echo $C['bachillerato2']; ?></th>
+                                <th><?php $sumaslicanciatura += $C['licenciatura2'];
+                                    echo $C['licenciatura2']; ?></th>
+                                <th><?php $subtotalTotal += $C['subtotal2'];
+                                    echo $C['subtotal2']; ?></th>
+                            <?php } ?>
+
                         </tr>
                         <tr>
                             <th>REMISOS</th>
-                            <th>b</th>
-                            <th>b</th>
-                            <th>b</th>
-                            <th>b</th>
-                            <th>b</th>
-                            <th>b</th>
+                            <?php
+                            include('generarTabla4Remisos.php');
+                            foreach ($datosR as $R) {
+                            ?>
+                                <th><?php $sumasinestudios += $R['sinestudios'];
+                                    echo $R['sinestudios']; ?></th>
+                                <th><?php $sumaspreescolar += $R['preescolar'];
+                                    echo $R['preescolar']; ?></th>
+                                <th><?php $sumasprimaria += $R['primaria'];
+                                    echo $R['primaria']; ?></th>
+                                <th><?php $sumassecundaria += $R['secundaria'];
+                                    echo $R['secundaria']; ?></th>
+                                <th><?php $sumasbachillerato += $R['bachillerato'];
+                                    echo $R['bachillerato']; ?></th>
+                                <th><?php $sumaslicanciatura += $R['licenciatura'];
+                                    echo $R['licenciatura']; ?></th>
+                                <th><?php $subtotalTotal += $R['subtotal'];
+                                    echo $R['subtotal']; ?></th>
+
+                            <?php } ?>
                         </tr>
                         <tr>
                             <th>TOTAL</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th><?php echo $sumasinestudios?></th>
+                            <th><?php echo $sumaspreescolar?></th>
+                            <th><?php echo $sumasprimaria?></th>
+                            <th><?php echo $sumassecundaria?></th>
+                            <th><?php echo $sumasbachillerato?></th>
+                            <th><?php echo $sumaslicanciatura?></th>
+                            <th><?php echo $subtotalTotal?></th>
                         </tr>
-                    
+
                 </tbody>
             </table><br><br>
-            <p style="text-align: center;">SAN JUAN BAUSTISTA TUSTEPEC, OAXACA; <?php echo $dia, " DE ", $mes, " DEL ", $Año?></p><br>
+            <p style="text-align: center;">SAN JUAN BAUSTISTA TUSTEPEC, OAXACA; <?php echo $dia, " DE ", $mes, " DEL ", $Año ?></p><br>
 
             <h4 style="text-align: center;">PRESIDENTE DE LA JUNTA MUNICIPAL DE RECLUTAMIENTO</h4><br>
 

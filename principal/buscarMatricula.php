@@ -21,7 +21,7 @@ $sql = "SELECT t1.matricula,
 			   t2.fecha_exped
 		FROM 
 			   datos_personales t2 LEFT JOIN matricula t1 
-			   ON t2.curp = t1.curp WHERE t1.matricula LIKE '".$buscar."%';";//consulta JOIN de sql
+			   ON t2.curp = t1.curp WHERE t1.matricula LIKE '".$buscar."';";//consulta JOIN de sql
 mysqli_set_charset($con, "utf8"); //el tipo de formato de datos que se usa es utf8
 
 if(!$result = mysqli_query($con, $sql)) die();//si los datos entre la coneccion y 

@@ -45,7 +45,7 @@ $Año= date('Y') - 18;
     <div>
 
         <div>
-            <h4 style="text-align: center;">LIBRO DE REGISRO <br>
+            <h4 style="text-align: center;">LIBRO DE REGISTRO <br>
                 JUNTA MUNICIPAL DE RECLUTAMIENTO DE SAN JUAN BAUTISTA TUXTEPEC, OAXACA <br>
                 LIBRO QUE SE ELABORA COMO RESULTADO DEL REGISTRO DEL PESONAL DEL SERVICIO MILITAR NACIONAL<br>
                 CLASE "<?php echo $Año?>", ANTICIPADOS Y PERMISOS QUE PARTICIPARAN EN EL SORTEO DEL PRESENTE AÑO

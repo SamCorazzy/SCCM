@@ -116,8 +116,8 @@
                     <div>
                         <label for="leer_escribir" class="field">SABE LEER Y ESCRIBIR</label>
                         <select name="leer_escribir" id="leer_escribir">
-                            <option value="Si">SI</option>
-                            <option value="No">NO</option>
+                            <option value="SI">SI</option>
+                            <option value="NO">NO</option>
                         </select>
                     </div>
 

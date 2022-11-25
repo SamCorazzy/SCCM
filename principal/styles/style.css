@@ -194,6 +194,24 @@ input[type="button"] {
 input[type="button"]:hover {
   background-color: #45a049;
 }
+
+a[type="button"] {
+  width: 25%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+a[type="button"]:hover {
+  background-color: #45a049;
+  text-decoration: none;
+}
+
+
 /* acaba formulario */
 
 /*Tabla*/

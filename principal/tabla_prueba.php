@@ -61,20 +61,18 @@
 						<tr>
 							<th>MATRICULA</th>
 							<th>NOMBRE(S) Y APELLIDOS PATERNO Y MATERNO</th>
-							<th>FECHA DE NACIMIENTO</thclass=>
-							<th>LUGAR DE NACIMIENTO</thclass=>
+							<th>FECHA DE NACIMIENTO</th>
+							<th>LUGAR DE NACIMIENTO</th>
 							<th>CURP</th>
 							<th>MEXICANOS POR:</th>
-							<th>NOMBRE Y APELLIDOS DEL PADRE</thclass=>
-							<th>NOMBRE Y APELLIDOS DE LA MADRE</thclass=>
+							<th>NOMBRE Y APELLIDOS DEL PADRE</th>
+							<th>NOMBRE Y APELLIDOS DE LA MADRE</th>
 							<th>ESTADO CIVIL</th>
 							<th>OCUPACION</th>
 							<th>SABE LEER Y ESCRIBIR</th>
-							<th>GRADO MAXIMO DE ESTUDIOS</thclass=>
-							<th>DOMICILIO</thclass=>
-							<th>FECHA DE EXPED</thclass=>
-							<th>IMPRIMIR</thclass=>
-						</tr>
+							<th>GRADO MAXIMO DE ESTUDIOS</th>
+							<th>DOMICILIO</th>
+							<th>FECHA DE EXPED</th>
 					</thead>
 					<tbody>
 						<tr>
