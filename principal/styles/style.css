@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  background: rgba(0, 0, 0, 0.5);
+  background:    #117a65;
   width: 100%;
   position: fixed;
   z-index: 100;
@@ -82,7 +82,7 @@ footer {
   bottom: 0px;
   height: 60px;
   width: 100%;
-  background: black;
+  background:    #117a65;
 }
 .pie {
   text-align: center;

@@ -5,6 +5,8 @@
 	<title> SCCM - TABLA</title>
 	<meta charset="utf-8" />
 	<meta name="description" content="Un formulario sirve para enviar datos a otra página que los recoge para usarlos o almacenarlos." />
+	
+    <link rel="shortcut icon" href="../img/favicon.ico" />
 
 	<!-- SweetAlert -->
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
