@@ -23,7 +23,7 @@
 </head>
 <!--LETRA-->
 <style>
-    body {
+    body {/* css interno para configurar el tipo de letra */
         font-family: 'Montserrat', sans-serif;
     }
 </style>
@@ -31,11 +31,11 @@
 
 <body>
     <div>
-        <header>
-            <img class="imgHead" src="../img\287.png" alt="" width="100" height="80" class="mx-2">
+        <header><!-- imagen logo -->
+        <img class="imgHead" src="../img/tux.png" alt="" width="200" height="80" class="mx-2">
             <a class="logo" href="formulario.php">SCCM</a>
             <nav>
-                <ul>
+                <ul><!-- Menu -->
                     <li><a href="formulario.php">FORMULARIO</a></li>
                     <li><a href="tabla_prueba.php">TABLA</a></li>
                     <li><a href="reporte.php">REPORTES</a></l>
@@ -49,37 +49,25 @@
         <div>
             <main>
                 <h3>ACCIONES DE MATRICULAS</h3>
-                <form class="formu" action="precartilla.php" method="POST">
-                <div>
-                        <h3>INGRESE LA MATRICULA A IMPRIMIR</h3>
-                        <?php
-                        $matricula="";
-                        echo '<input type="hidden" value="' . htmlspecialchars($matricula) . '" />'."\n";
-                        echo '<label for="matricula" class="field">MATRICULA</label>
-                        <input type="text" name="matricula" placeholder="MATRICULA" id="matricula" value="'.htmlspecialchars($matricula).'">'
-                    ?>
-                </div>
-                    <div>
-                        <center>
-                            <!-- <input type="button" name="prematricula" id="prematricula" value="PRPARAR PARA IMPRIMIR" style="padding-right: 20px;"> -->
-                            <!-- <input type="submit" name="imprimirMatricula" id="imprimirMatricula" value="IMPRIMIR"> -->
-                            <a href="precartilla.php?matricula=<?php echo htmlspecialchars($matricula);?>">Ir a respuesta.php</a>
-                        </center>
-                    </div>
+                <form>
                     <div>
                         <h3>INGRESE MATRICULA EXTRAVIADA</h3>
                         <label for="matriculaExt" class="field">MATRICULA</label>
+                        <!-- Elemento input para la matricula a dar por extraviada -->
                         <input type="text" name="matriculaExt" placeholder="MATRICULA" id="matriculaExt">
                     </div>
                     <div>
+                        <!-- Elemento input tipo button para la matricula a dar por extraviada -->
                         <center><input type="button" name="guardarMaExtr" id="guardarMaExtr" value="GUARDAR"></center>
                     </div>
                     <div>
                         <h3>INGRESE MATRICULA A INUTILIZAR</h3>
                         <label for="matriculaInt" class="field">MATRICULA</label>
+                        <!-- Elemento input para la matricula a dar por inutilizada -->
                         <input type="text" name="matriculaInt" placeholder="MATRICULA" id="matriculaInt">
                     </div>
                     <div>
+                        <!-- Elemento input button para la matricula a dar por inutilizada -->
                         <center><input type="button" name="guardarMaInut" id="guardarMaInut" value="GUARDAR"></center>
                     </div>
                 </form>
@@ -88,6 +76,7 @@
 
     </div>
     <br><br><br><br>
+    <!-- Archivo js a usar para los eventos -->
     <script src="gMatriculas.js"></script>
 </body>
 <footer>

@@ -1,13 +1,15 @@
 <?php
+//archivo que sirve para imprimir el segundo reporte que se usa en el archivo reporte.php
+ob_start();//inicia el metodo ob_start() para poder imprimir esta documento
 
-ob_start();
-
-include("generarTabla2.php");
-// $datosp = json_decode($json_string, true);
-$Año= date('Y') - 18; 
-$a = 0;
+include("generarTabla2.php");//utiliza el archivo para poder interacturar con la base de datos
+// $datosp = json_decode($json_string, true); //con o sin esta linea de codigo funciona 
+$Año= date('Y') - 18; //Variable para obtener el año o clase a cual pertenece este reporte
+$a = 0;//se inicializa una variable a usar en este archivo 
 
 ?>
+
+<!-- se abre un documento HTML para poder modificar como se vera el aspecto del documento a imprimir -->
 
 <!DOCTYPE html>
 <html lang="es">
@@ -66,10 +68,10 @@ $a = 0;
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($datosp as $perso) { ?>
+                    <?php foreach ($datosp as $perso) { //se hace un ciclo foreach para poder leer los datos ?>
                         <tr>
                             <th><?php echo ++$a ?></th>
-                            <th><?php echo $perso['matricula']; ?></th>
+                            <th><?php echo $perso['matricula']; //datos php obtenidos ?></th>
                             <th><?php echo $perso['nombre_apellidos']; ?></th>
                             <th>aaaaa</th>
                             <th><?php echo $perso['clase']; ?></th>
@@ -77,7 +79,7 @@ $a = 0;
                             <th><?php echo $perso['domicilio']; ?></th>
 
                         </tr>
-                    <?php } ?>
+                    <?php } //cierre de ciclo foreach  ?>
                 </tbody>
             </table>
         </div>
@@ -89,14 +91,16 @@ $a = 0;
 </html>
 
 <?php
+//El siguiente metodo no permite que el documento html se muestre en cambio muostrara la vista de impresión
 $html = ob_get_clean();
 //echo $html;
 
+//requiere el uso de la libreria Dompdf
 require_once 'libreria\dompdf\autoload.inc.php'; //..libreria\dompdf\autoload.inc.php
 use Dompdf\Dompdf;
-
+//inicializa una nueva función Dompdf
 $dompdf = new Dompdf();
-
+//obtiene las funciones que requiere en caso de usarlas
 $options = $dompdf->getOptions();
 $options->set(array('isRemoteEnable' => true)); //para imagenes
 $dompdf->setOptions($options);
@@ -104,7 +108,7 @@ $dompdf->setOptions($options);
 $dompdf->loadHtml($html); //guarda el archivo html o un mensaje
 
 //$dompdf->setPaper('letter');
-$dompdf->setPaper('A4', 'landscape');
+$dompdf->setPaper('A4', 'landscape');//medidas del documento pdf que generara
 
 $dompdf->render();
 

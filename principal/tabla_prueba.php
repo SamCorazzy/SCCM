@@ -25,19 +25,18 @@
 
 </head>
 <style>
-	body {
+	body {/* css interno para configurar el tipo de letra */
 		font-family: 'Montserrat', sans-serif;
 	}
 </style>
-
 <body>
 
 	<div>
-		<header>
-			<img class="imgHead" src="../img\287.png" alt="" width="100" height="80" class="mx-2">
+		<header><!-- imagen logo -->
+		<img class="imgHead" src="../img/tux.png" alt="" width="200" height="80" class="mx-2">
 			<a class="logo" href="formulario.php">SCCM</a>
 			<nav>
-				<ul>
+				<ul><!-- Menu -->
 					<li><a href="formulario.php">FORMULARIO</a></li>
 					<li><a href="matriculas.php">MATRICULA</a></li>
 					<li><a href="reporte.php">REPORTES</a></l>
@@ -49,10 +48,14 @@
 
 
 	<div class="contenido_tabla" id="tablajson">
-		<form>
+		<!-- Elemento form con action precartilla.php para poder mandar con el method POST el valor del input
+				buscar poder imprimir la precartilla de tal matricula -->
+		<form action="precartilla.php" method="POST">
 			<div>
-				<label for="buscar" class="buscar">Buscar</label>
+				<label for="buscar" class="buscar">BUSCAR MATRICULA</label>
+				<!-- Elemento input para buscar una matricula que tambien se podra imprimir -->
 				<input type="text" id="buscar" name="buscar" class="buscar_input"  maxlength="9" onkeyup="buscarMatricula()">
+				<input type="hidden" value="" name="valor" id="valor">
 			</div>
 			<!-- <br><br><br><br><br><br><br><br><br> -->
 			<div class="tabla">
@@ -75,7 +78,7 @@
 							<th>FECHA DE EXPED</th>
 					</thead>
 					<tbody>
-						<tr>
+						<tr><!-- Estos datos se mostraran en caso de no tener conexion -->
 							<td scope="row">1</td>
 							<td>Mark</td>
 							<td>Otto</td>
@@ -93,7 +96,10 @@
 						</tr>
 					</tbody>
 				</table>
+				<br><br>
+				<input type="submit" id="imprimir" value="IMPRIMIR"></input>
 				<script type="text/javascript">
+					// script interno para ejecutar funciones al cargar la pagina
 					$(document).ready(function() {
 						imprimirDatos();
 					});
@@ -102,7 +108,7 @@
 		</form>
 	</div>
 
-
+<!-- Archivo js a usar para los eventos -->
 <script src="rBuscarMatricula.js"></script>
 </body>
 <footer>

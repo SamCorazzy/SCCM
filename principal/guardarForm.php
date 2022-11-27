@@ -1,10 +1,11 @@
 <?php
-require 'conexion.php';
+//Este archivo sirve para guardar los datos que obtiene el archivo gForm.js del archivo formulario.php
+require 'conexion.php';//utiliza el archivo para poder interacturar con la base de datos
 //convierte el json a array
-$datos = json_decode($_POST['json'], true);//obtencion de datos del json
+$datos = json_decode($_POST['json'], true);//obtencion de datos del json decodificandolos
 //recorrer el arreglo
-foreach ($datos as $datos) {
-     $matricula = $datos['matricula'];
+foreach ($datos as $datos) {//un metodo for each php para recorrer el arreglo y conseguir los datos
+     $matricula = $datos['matricula'];//datos obtenidos
      $nombre_apellidos = $datos['nombre_apellidos'];
      $fecha_nac = $datos['fecha_nac'];
      $lugar_nac = $datos['lugar_nac'];
@@ -21,11 +22,12 @@ foreach ($datos as $datos) {
      $fecha_exped = $datos['fecha_exped'];
      $clase = $datos['clase'];
 
-     //posiblemente cambiar a update
-
+     //ejecuta una consulta sql para guardar los datos que fueron obtenidos en cada ciclo foreach
+     //La siguiente consulta los guarda en la tabla matricula
      $guardar = mysqli_query($con, "INSERT INTO matricula (matricula, curp, expedidas) 
           VALUES ('$matricula', '$curp', '1')");
           //sentencia para insertar datos en la base de datos
+     //La siguiente consulta los guarda en la tabla datos_personales
      $guardar = mysqli_query($con, "INSERT INTO datos_personales (
      nombre_ape, 
      fecha_nac, 

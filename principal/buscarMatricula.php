@@ -1,10 +1,10 @@
 <?php //inicio de un documento php
-require 'conexion.php';
+require 'conexion.php';//utiliza el archivo para poder interacturar con la base de datos
 //Creamos la conexión
 
-$buscar = $_POST['json'];
+$buscar = $_POST['json'];//obtiene un valor de rBuscarMatricula.js
 
-//generamos la consulta
+//generamos la consulta con el valor obtenido 
 $sql = "SELECT t1.matricula, 
 			   t2.nombre_ape,
 			   t2.fecha_nac, 
@@ -30,7 +30,7 @@ if(!$result = mysqli_query($con, $sql)) die();//si los datos entre la coneccion 
 $datosp = array(); //creamos un array
 
 while($row = mysqli_fetch_array($result)) //relleno del array
-{ //relleno del array segun los datos que se desean obtener de la consulta
+{  //relleno del array segun los datos que se desean obtener de la consulta hasta que todos los datos se guarden en el
 	$matricula=$row['matricula'];
 	$nombre_ape=$row['nombre_ape'];
 	$fecha_nac=$row['fecha_nac'];
@@ -46,7 +46,7 @@ while($row = mysqli_fetch_array($result)) //relleno del array
 	$domicilio=$row['domicilio'];
 	$fecha_exped=$row['fecha_exped'];
 	
-
+	//Una vez terminado el proceso se guardaran los datos en el array  creado anteriormente para poder usarlos 
 	$datosp[] = array('matricula'=> $matricula, 
 						'nombre_apellidos'=> $nombre_ape, 
 						'fecha_nac'=> $fecha_nac, 
@@ -70,16 +70,8 @@ $close = mysqli_close($con)
 or die("Ha sucedido un error inexperado en la desconexion de la base de datos");
   
 
-//Creamos el JSON
-//$verduleria['verduleria'] = $verduleria;
 $json_string = json_encode($datosp);//documento json que se usa para almacenar los datos del array
 echo $json_string;
 
-//Si queremos crear un archivo json, sería de esta forma:
-/*
-$file = 'verduleria.json';
-file_put_contents($file, $json_string);
-*/
-	
 
 ?>

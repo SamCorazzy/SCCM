@@ -1,13 +1,14 @@
 <?php
-
-ob_start();
-require 'conexion.php';
+//archivo que sirve para imprimir el cuarto reporte que se usa en el archivo reporte.php
+ob_start();//inicia el metodo ob_start() para poder imprimir esta documento
+require 'conexion.php';//utiliza el archivo para poder interacturar con la base de datos
 
 $Año = date('Y'); //Obtener Año actual
 $meses = array("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"); //Obtener Mes
 $mes = $meses[date('n') - 1]; //Variable para guardar el mes de la fecha actual
 $dia = date('j'); //Variable para obtener el dia del mes de la fecha actual
-$sumasinestudios = 0;
+$sumasinestudios = 0;//se iniciam variables para poder obtener la suma de vada una de las columnas de la 
+//tabla a generar
 $sumaspreescolar = 0;
 $sumasprimaria = 0;
 $sumassecundaria = 0;
@@ -15,6 +16,8 @@ $sumasbachillerato = 0;
 $sumaslicanciatura = 0;
 $subtotalTotal = 0;
 ?>
+
+<!-- se abre un documento HTML para poder modificar como se vera el aspecto del documento a imprimir -->
 
 <!DOCTYPE html>
 <html lang="es">
@@ -76,84 +79,84 @@ $subtotalTotal = 0;
                 </thead>
                 <tbody>
                     <?php
-                    include('generarTabla4Anticipados.php');
-                    foreach ($datosA as $A) {
+                    include('generarTabla4Anticipados.php'); //utiliza el archivo para poder obtener los datos de su consulta
+                    foreach ($datosA as $A)  { //se hace un ciclo foreach para poder leer los datos
                     ?>
                         <tr>
                             <th>ANTICIPADOS</th>
-                            <th><?php $sumasinestudios = $A['sinestudios'];
-                                echo $A['sinestudios']; ?></th>
-                            <th><?php $sumaspreescolar = $A['preescolar'];
-                                echo $A['preescolar']; ?></th>
-                            <th><?php $sumasprimaria = $A['primaria'];
-                                echo $A['primaria']; ?></th>
-                            <th><?php $sumassecundaria = $A['secundaria'];
-                                echo $A['secundaria']; ?></th>
-                            <th><?php $sumasbachillerato = $A['bachillerato'];
-                                echo $A['bachillerato']; ?></th>
-                            <th><?php $sumaslicanciatura = $A['licenciatura'];
-                                echo $A['licenciatura']; ?></th>
-                            <th><?php $subtotalTotal = $A['subtotal'];
-                                echo $A['subtotal']; ?></th>
+                            <th><?php $sumasinestudios = $A['sinestudios'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                echo $A['sinestudios']; //datos php obtenidos ?></th>
+                            <th><?php $sumaspreescolar = $A['preescolar'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                echo $A['preescolar']; //datos php obtenidos ?></th>
+                            <th><?php $sumasprimaria = $A['primaria'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                echo $A['primaria']; //datos php obtenidos ?></th>
+                            <th><?php $sumassecundaria = $A['secundaria'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                echo $A['secundaria']; //datos php obtenidos ?></th>
+                            <th><?php $sumasbachillerato = $A['bachillerato'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                echo $A['bachillerato']; //datos php obtenidos ?></th>
+                            <th><?php $sumaslicanciatura = $A['licenciatura'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                echo $A['licenciatura']; //datos php obtenidos ?></th>
+                            <th><?php $subtotalTotal = $A['subtotal'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                echo $A['subtotal']; //datos php obtenidos ?></th>
 
-                        <?php } ?>
+                        <?php } //cierre de ciclo foreach de anticipados ?>
                         </tr>
 
                         <tr>
                             <th>CLASE</th>
                             <?php
-                            include('generarTabla4Clase.php');
-                            foreach ($datosC as $C) {
+                            include('generarTabla4Clase.php'); //utiliza el archivo para poder obtener los datos de su consulta
+                            foreach ($datosC as $C) {//se hace un ciclo foreach para poder leer los datos
                             ?>
-                                <th><?php $sumasinestudios += $C['sinestudios2'];
+                                <th><?php $sumasinestudios += $C['sinestudios2'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
                                     echo $C['sinestudios2']; ?></th>
-                                <th><?php $sumaspreescolar += $C['preescolar2'];
-                                    echo $C['preescolar2']; ?></th>
-                                <th><?php $sumasprimaria += $C['primaria2'];
-                                    echo $C['primaria2']; ?></th>
-                                <th><?php $sumassecundaria += $C['secundaria2'];
-                                    echo $C['secundaria2']; ?></th>
-                                <th><?php $sumasbachillerato += $C['bachillerato2'];
-                                    echo $C['bachillerato2']; ?></th>
-                                <th><?php $sumaslicanciatura += $C['licenciatura2'];
-                                    echo $C['licenciatura2']; ?></th>
-                                <th><?php $subtotalTotal += $C['subtotal2'];
-                                    echo $C['subtotal2']; ?></th>
-                            <?php } ?>
+                                <th><?php $sumaspreescolar += $C['preescolar2'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                    echo $C['preescolar2']; //datos php obtenidos ?></th>
+                                <th><?php $sumasprimaria += $C['primaria2'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                    echo $C['primaria2']; //datos php obtenidos ?></th>
+                                <th><?php $sumassecundaria += $C['secundaria2'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                    echo $C['secundaria2']; //datos php obtenidos ?></th>
+                                <th><?php $sumasbachillerato += $C['bachillerato2'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                    echo $C['bachillerato2']; //datos php obtenidos ?></th>
+                                <th><?php $sumaslicanciatura += $C['licenciatura2'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                    echo $C['licenciatura2']; //datos php obtenidos ?></th>
+                                <th><?php $subtotalTotal += $C['subtotal2'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                    echo $C['subtotal2']; //datos php obtenidos ?></th>
+                            <?php } //cierre de ciclo foreach de clase ?>
 
                         </tr>
                         <tr>
                             <th>REMISOS</th>
                             <?php
-                            include('generarTabla4Remisos.php');
-                            foreach ($datosR as $R) {
+                            include('generarTabla4Remisos.php'); //utiliza el archivo para poder obtener los datos de su consulta
+                            foreach ($datosR as $R) {//se hace un ciclo foreach para poder leer los datos
                             ?>
-                                <th><?php $sumasinestudios += $R['sinestudios'];
-                                    echo $R['sinestudios']; ?></th>
-                                <th><?php $sumaspreescolar += $R['preescolar'];
-                                    echo $R['preescolar']; ?></th>
-                                <th><?php $sumasprimaria += $R['primaria'];
-                                    echo $R['primaria']; ?></th>
-                                <th><?php $sumassecundaria += $R['secundaria'];
-                                    echo $R['secundaria']; ?></th>
-                                <th><?php $sumasbachillerato += $R['bachillerato'];
-                                    echo $R['bachillerato']; ?></th>
-                                <th><?php $sumaslicanciatura += $R['licenciatura'];
-                                    echo $R['licenciatura']; ?></th>
-                                <th><?php $subtotalTotal += $R['subtotal'];
-                                    echo $R['subtotal']; ?></th>
+                                <th><?php $sumasinestudios += $R['sinestudios'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                    echo $R['sinestudios']; //datos php obtenidos ?></th>
+                                <th><?php $sumaspreescolar += $R['preescolar'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                    echo $R['preescolar']; //datos php obtenidos ?></th>
+                                <th><?php $sumasprimaria += $R['primaria'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                    echo $R['primaria']; //datos php obtenidos ?></th>
+                                <th><?php $sumassecundaria += $R['secundaria'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                    echo $R['secundaria']; //datos php obtenidos ?></th>
+                                <th><?php $sumasbachillerato += $R['bachillerato'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                    echo $R['bachillerato']; //datos php obtenidos ?></th>
+                                <th><?php $sumaslicanciatura += $R['licenciatura'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                    echo $R['licenciatura']; //datos php obtenidos ?></th>
+                                <th><?php $subtotalTotal += $R['subtotal'];//aqui se estan guardando los datos en las variables para sumar el total por columna de la tabla
+                                    echo $R['subtotal']; //datos php obtenidos ?></th>
 
-                            <?php } ?>
+                            <?php } //cierre de ciclo foreach de remisos ?>
                         </tr>
                         <tr>
                             <th>TOTAL</th>
-                            <th><?php echo $sumasinestudios?></th>
-                            <th><?php echo $sumaspreescolar?></th>
-                            <th><?php echo $sumasprimaria?></th>
-                            <th><?php echo $sumassecundaria?></th>
-                            <th><?php echo $sumasbachillerato?></th>
-                            <th><?php echo $sumaslicanciatura?></th>
-                            <th><?php echo $subtotalTotal?></th>
+                            <th><?php echo $sumasinestudios //aqui se imprimimen las sumas de cada columna ?></th>
+                            <th><?php echo $sumaspreescolar //aqui se imprimimen las sumas de cada columna ?></th>
+                            <th><?php echo $sumasprimaria //aqui se imprimimen las sumas de cada columna ?></th>
+                            <th><?php echo $sumassecundaria //aqui se imprimimen las sumas de cada columna ?></th>
+                            <th><?php echo $sumasbachillerato //aqui se imprimimen las sumas de cada columna ?></th>
+                            <th><?php echo $sumaslicanciatura //aqui se imprimimen las sumas de cada columna ?></th>
+                            <th><?php echo $subtotalTotal //aqui se imprimimen las sumas de cada columna ?></th>
                         </tr>
 
                 </tbody>
@@ -172,14 +175,16 @@ $subtotalTotal = 0;
 </html>
 
 <?php
+//El siguiente metodo no permite que el documento html se muestre en cambio muostrara la vista de impresión
 $html = ob_get_clean();
 //echo $html;
 
+//requiere el uso de la libreria Dompdf
 require_once 'libreria\dompdf\autoload.inc.php'; //..libreria\dompdf\autoload.inc.php
 use Dompdf\Dompdf;
-
+//inicializa una nueva función Dompdf
 $dompdf = new Dompdf();
-
+//obtiene las funciones que requiere en caso de usarlas
 $options = $dompdf->getOptions();
 $options->set(array('isRemoteEnable' => true)); //para imagenes
 $dompdf->setOptions($options);
@@ -187,7 +192,7 @@ $dompdf->setOptions($options);
 $dompdf->loadHtml($html); //guarda el archivo html o un mensaje
 
 //$dompdf->setPaper('letter');
-$dompdf->setPaper('A4', 'landscape');
+$dompdf->setPaper('A4', 'landscape');//medidas del documento pdf que generara
 
 $dompdf->render();
 
