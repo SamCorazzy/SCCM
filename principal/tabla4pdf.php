@@ -165,7 +165,7 @@ $subtotalTotal = 0;
 
             <h4 style="text-align: center;">PRESIDENTE DE LA JUNTA MUNICIPAL DE RECLUTAMIENTO</h4><br>
 
-            <h4 style="text-align: center;">C. IRINEO</h4>
+            <h4 style="text-align: center;">C. IRINEO MOLINA ESPINOZA</h4>
         </div>
 
     </div>

@@ -204,6 +204,7 @@
             $("#fecha_nac").attr("max", atras18Max + "-" + 12 + "-" + 31);
             document.getElementById('fecha_nac').value = atras18Min + "-" + 1 + "-" + 1;
             //----------------------------------------------------------------------
+            modificarONo();
         }); 
         </script>
         <!-- Script usado para guardar los valores de los elementos rellenados del formulario -->

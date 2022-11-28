@@ -73,7 +73,7 @@ $a = 0;//se inicializa una variable a usar en este archivo
                             <th><?php echo ++$a ?></th>
                             <th><?php echo $perso['matricula']; //datos php obtenidos ?></th>
                             <th><?php echo $perso['nombre_apellidos']; ?></th>
-                            <th>aaaaa</th>
+                            <th></th>
                             <th><?php echo $perso['clase']; ?></th>
                             <th><?php echo $perso['grado_maximo_estudio']; ?></th>
                             <th><?php echo $perso['domicilio']; ?></th>
