@@ -263,6 +263,7 @@ function modificarONo() {
             document.getElementById("nombre_ape_padre").removeAttribute("readonly", false);
             document.getElementById("nombre_ape_madre").removeAttribute("readonly", false);
             document.getElementById("estado_civil").removeAttribute("disabled", false);
+            document.getElementById("ocupacion").removeAttribute("readonly", false);
             document.getElementById("leer_escribir").removeAttribute("disabled", false);
             document.getElementById("grado_maximo_estudio").removeAttribute("disabled", false);
             document.getElementById("grado").removeAttribute("disabled", false);

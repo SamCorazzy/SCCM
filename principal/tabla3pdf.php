@@ -47,7 +47,7 @@ $Año= date('Y') - 18; //Variable para obtener el año o clase a cual pertenece 
 
         <div>
             <h4 style="text-align: center;"><div>
-            <p style="text-align: center;">LISTA INICIAL</p>
+            <p style="text-align: center;">BALANCE DE LAS CARTILLAS EXPEDIDAS</p>
                <p style="text-align: center;">JUNTA MUNICIPAL DE RECLUTAMIENTO DE SAN JUAN BAUTISTA TUXTEPEC, OAXACA <br>
                BALANCE DE LAS CARTILLAS DE IDENTIDAD MILITAR QUE SE FUERON MINISTRADAS A ESTA JUNTA MUNICIPAL DE <br>
                RECLUTAMIENTO, POR LA OFICINA DE RECLUTAMIENTO DE LA 28/a. ZONA MILITAR PARA SER EXPEDIDAS AL <br>

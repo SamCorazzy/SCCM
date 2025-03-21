@@ -55,7 +55,7 @@ $a = 0;//se inicializa una variable a usar en este archivo
         </div><br>
 
         <div>
-            <table class="content-table" border="1" cellspacing="1" bordercolor="black" style="border-collapse:collapse; border-color: black;">
+            <table class="content-table" border="1" cellspacing="1" bordercolor="black" style="border-collapse:collapse; border-color: black; margin: 0 auto">
                 <thead>
                     <tr>
                         <th>No. PROG</th>

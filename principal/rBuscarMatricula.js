@@ -1,5 +1,5 @@
 var bMa = "";//variables a usar en las funciones
-var a;
+var a=1;
 var datosp = [];
 var url;
 
@@ -7,6 +7,7 @@ var url;
 //funcion que se ejecuta al momento que el evento onkeyup se ejecuta en el input buscar del archivo 
 //tabla_prueba.php
 function buscarMatricula() {
+    console.log(a++);
     var matricula = document.querySelector('#buscar').value;//obtiene el valor de un elemento html y lo guarda en una variable
     bMa = matricula;
     if (matricula != "") {//se analiza si la varible esta vacia
@@ -40,7 +41,7 @@ function buscarMatricula() {
                 $('#tablajson tbody').html(html);//lugar en donde se imprimiran
             },
             error: function (jqXHR, textStatus, errorThrown) {//mostrara un error si no hay conexion
-                alert('Error...')
+                alert('Error...'+jqXHR+"  |||  "+textStatus+"  ||||  "+errorThrown)
             }
         });
         inputVision();//funcion que sirve para mostrar un boton que sirve para imprimir la matricula buscada
@@ -52,6 +53,7 @@ function buscarMatricula() {
 
 
 function imprimirDatos() { 
+    console.log("b");
     inputVision();//en caso que no encuentre la matricula o este vacio el input se ejecuta esta funcion
     url = "generarTabla.php";
     $("#tablajson tbody").html(""); //definiedo el formato de tabla en html usando un id de 

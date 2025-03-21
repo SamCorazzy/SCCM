@@ -59,7 +59,7 @@
                     <div>
                         <label for="matricula" class="field">MATRICULA</label>
                         <!-- Elemento input para que por medio de una expresión regular reconocer si se ingresa una matricula -->
-                        <input type="text" name="matricula" required placeholder="MATRICULA" id="matricula" minlength="9" maxlength="9" pattern="[A-Z]{1}[-]\d{7}">
+                        <input type="text" name="matricula" required placeholder="MATRICULA EJ. (A-1545612)" id="matricula" minlength="9" maxlength="9" pattern="[A-Z]{1}[-]\d{7}">
                     </div>
 
 
@@ -82,7 +82,7 @@
                     <div>
                         <label for="clase" class="field">CLASE</label>
                         <!-- Elemento input que obtiene la clase -->
-                        <input type="text" name="clase" required placeholder="CLASE" id="clase" minlength="4" maxlength="4" value="" readonly>
+                        <input type="text" name="clase" required placeholder="CLASE O AÑO" id="clase" minlength="4" maxlength="4" value="" readonly>
                     </div>
 
                     <div>

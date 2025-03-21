@@ -61,15 +61,15 @@ $Año= date('Y') - 18; //Variable para obtener el año o clase a cual pertenece 
                     <tr>
                         <th>MATRICULA</th>
                         <th class=>NOMBRE(S) Y APELLIDOS PATERNO Y MATERNO</th>
-                        <th class=>FECHA DE NACIMIENTO</th>
+                        <th class=>FECHA DE NACIMI<BR> ENTO</th>
                         <th class=>LUGAR DE NACIMIENTO</th>
                         <th>CURP</th>
                         <th>MEXICANOS POR:</th>
-                        <th class=>NOMBRE Y APELLIDOS DEL PADRE</th>
-                        <th class=>NOMBRE Y APELLIDOS DE LA MADRE</th>
+                        <th class=>NOMBRE Y APELLI <BR> DOS DEL PADRE</th>
+                        <th class=>NOMBRE Y APELLI <BR> DOS DE LA MADRE</th>
                         <th>ESTADO CIVIL</th>
                         <th>OCUPACION</th>
-                        <th>SABE LEER Y ESCRIBIR</th>
+                        <th>SABE LEER Y ESCRI<BR> BIR</th>
                         <th class=>GRADO MAXIMO DE ESTUDIOS</th>
                         <th class=>DOMICILIO</th>
                         <th class=>FECHA DE EXPED</th>
